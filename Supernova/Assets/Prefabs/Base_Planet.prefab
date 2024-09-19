@@ -161,4 +161,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a1eb50cdfd03b441a9141334788fffa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fruitsType: 0
+  planetPrefabs:
+  - {fileID: 8850260874830975486, guid: d88388ac173581b46b9336728502cdd2, type: 3}
+  - {fileID: 4752265993662505199, guid: fe6292f5e082dfd4e91d7ebde9d2c1f3, type: 3}
+  - {fileID: 3157794599125449229, guid: 964a71a5af85ef846a9f0144b123813e, type: 3}
+  - {fileID: 5331252274652126307, guid: fb2172005787cad409a2d011447de6e6, type: 3}
+  - {fileID: 5652893856142654655, guid: 16be99098162f9448980157cd4cdcc2d, type: 3}
+  - {fileID: 2419510982393581207, guid: af2110f637bdf4347b62259d61756879, type: 3}
+  - {fileID: 7772732951743519015, guid: a3cbaf242d1812a4bb101c50c64ee81b, type: 3}
+  - {fileID: 7580942010851116035, guid: 29220d1ebff354244a27aae9ce1cb90a, type: 3}
+  - {fileID: 6715341109202755419, guid: 0627f53296b4f4a4db5ff8a24edf782c, type: 3}
+  planetType: 0

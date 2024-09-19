@@ -24,6 +24,10 @@ PrefabInstance:
       propertyPath: fruitsType
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 1823207884311009962, guid: 79e4de90928ef6d4fb3e28110c42589a, type: 3}
+      propertyPath: planetType
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2994666857139320164, guid: 79e4de90928ef6d4fb3e28110c42589a, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.3
