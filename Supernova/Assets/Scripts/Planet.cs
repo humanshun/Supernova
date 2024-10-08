@@ -6,13 +6,13 @@ using UnityEngine;
 public enum PLANETS_TYPE
 {
     sui = 1,
-    ka,
     kin,
     chi,
-    kai,
-    ten,
-    dou,
+    ka,
     moku,
+    dou,
+    ten,
+    kai,
     taiyou,
 }
 

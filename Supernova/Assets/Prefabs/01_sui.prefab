@@ -27,7 +27,7 @@ PrefabInstance:
     - target: {fileID: 1823207884311009962, guid: 79e4de90928ef6d4fb3e28110c42589a, type: 3}
       propertyPath: nextPlanet
       value: 
-      objectReference: {fileID: 4752265993662505199, guid: fe6292f5e082dfd4e91d7ebde9d2c1f3, type: 3}
+      objectReference: {fileID: 3157794599125449229, guid: 964a71a5af85ef846a9f0144b123813e, type: 3}
     - target: {fileID: 1823207884311009962, guid: 79e4de90928ef6d4fb3e28110c42589a, type: 3}
       propertyPath: planetType
       value: 1
@@ -38,11 +38,11 @@ PrefabInstance:
       objectReference: {fileID: 8850260874830975486}
     - target: {fileID: 2994666857139320164, guid: 79e4de90928ef6d4fb3e28110c42589a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -7.772397
       objectReference: {fileID: 0}
     - target: {fileID: 2994666857139320164, guid: 79e4de90928ef6d4fb3e28110c42589a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 4.9636803
       objectReference: {fileID: 0}
     - target: {fileID: 2994666857139320164, guid: 79e4de90928ef6d4fb3e28110c42589a, type: 3}
       propertyPath: m_LocalPosition.z
