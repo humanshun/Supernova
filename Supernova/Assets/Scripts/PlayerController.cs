@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float moveSpeed = 5f;  // プレイヤーの移動速度
+    [SerializeField] private float moveSpeed = 5f;  // プレイヤーの移動速度
+    [SerializeField] NextPlanet nextPlanet;
     private Rigidbody2D rb;       // Rigidbody2Dコンポーネントへの参照
     private Vector2 moveDirection; // 移動方向を保存するための変数
+    private int planetNumber;
 
     // 移動範囲の制限
     public float minX = -8.5f;
@@ -21,6 +23,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        SpawnRandomPlanet();
     }
 
     void Update()
@@ -34,6 +37,8 @@ public class PlayerController : MonoBehaviour
         // スペースキーを押したらフルーツをスポーン
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            planetNumber = nextPlanet.nextPlanetNumber;
+            nextPlanet.NextPlanetInstance();
             SpawnRandomPlanet();
         }
     }
@@ -55,10 +60,7 @@ public class PlayerController : MonoBehaviour
 
     void SpawnRandomPlanet()
     {
-        // ランダムな惑星を選択
-        int randomIndex = Random.Range(0, planetPrefabs.Length);
-
         // 惑星をスポーン
-        Instantiate(planetPrefabs[randomIndex], spawnPoint.position, Quaternion.identity);
+        Instantiate(planetPrefabs[planetNumber], spawnPoint.position, Quaternion.identity);
     }
 }

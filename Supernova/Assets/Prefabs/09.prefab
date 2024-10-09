@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &4696176572276612810
+--- !u!1001 &5939853861606554926
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,51 +10,51 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1107664184395555445, guid: 79e4de90928ef6d4fb3e28110c42589a, type: 3}
       propertyPath: m_Name
-      value: 08_kai
+      value: 09_taiyou
       objectReference: {fileID: 0}
     - target: {fileID: 1653064339189188515, guid: 79e4de90928ef6d4fb3e28110c42589a, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 0a73328190b6a1b4787cc6921bbe0f94, type: 3}
+      objectReference: {fileID: 21300000, guid: a27406c97e517164cbd7003354e6739c, type: 3}
+    - target: {fileID: 1653064339189188515, guid: 79e4de90928ef6d4fb3e28110c42589a, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1653064339189188515, guid: 79e4de90928ef6d4fb3e28110c42589a, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1823207884311009962, guid: 79e4de90928ef6d4fb3e28110c42589a, type: 3}
       propertyPath: fruitsType
-      value: 5
+      value: 9
       objectReference: {fileID: 0}
-    - target: {fileID: 1823207884311009962, guid: 79e4de90928ef6d4fb3e28110c42589a, type: 3}
-      propertyPath: nextPlanet
-      value: 
-      objectReference: {fileID: 6715341109202755419, guid: 0627f53296b4f4a4db5ff8a24edf782c, type: 3}
     - target: {fileID: 1823207884311009962, guid: 79e4de90928ef6d4fb3e28110c42589a, type: 3}
       propertyPath: planetType
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1823207884311009962, guid: 79e4de90928ef6d4fb3e28110c42589a, type: 3}
-      propertyPath: planetPrefabs.Array.data[4]
+      propertyPath: planetPrefabs.Array.data[8]
       value: 
-      objectReference: {fileID: 5652893856142654655}
+      objectReference: {fileID: 6715341109202755419}
     - target: {fileID: 2994666857139320164, guid: 79e4de90928ef6d4fb3e28110c42589a, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.85
+      value: 1.4999999
       objectReference: {fileID: 0}
     - target: {fileID: 2994666857139320164, guid: 79e4de90928ef6d4fb3e28110c42589a, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.85
+      value: 1.4999999
       objectReference: {fileID: 0}
     - target: {fileID: 2994666857139320164, guid: 79e4de90928ef6d4fb3e28110c42589a, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.85
+      value: 1.4999999
       objectReference: {fileID: 0}
     - target: {fileID: 2994666857139320164, guid: 79e4de90928ef6d4fb3e28110c42589a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 15.375302
+      value: 13.535109
       objectReference: {fileID: 0}
     - target: {fileID: 2994666857139320164, guid: 79e4de90928ef6d4fb3e28110c42589a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.9636803
+      value: -3.4624698
       objectReference: {fileID: 0}
     - target: {fileID: 2994666857139320164, guid: 79e4de90928ef6d4fb3e28110c42589a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -90,23 +90,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5255400797338641602, guid: 79e4de90928ef6d4fb3e28110c42589a, type: 3}
       propertyPath: m_Radius
-      value: 3.5890117
+      value: 2.7282386
       objectReference: {fileID: 0}
     - target: {fileID: 5255400797338641602, guid: 79e4de90928ef6d4fb3e28110c42589a, type: 3}
       propertyPath: m_Offset.x
-      value: 0.046047367
+      value: 0.0034599039
       objectReference: {fileID: 0}
     - target: {fileID: 5255400797338641602, guid: 79e4de90928ef6d4fb3e28110c42589a, type: 3}
       propertyPath: m_Offset.y
-      value: 0.103355244
+      value: -0.0031921414
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79e4de90928ef6d4fb3e28110c42589a, type: 3}
---- !u!1 &5652893856142654655 stripped
+--- !u!1 &6715341109202755419 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1107664184395555445, guid: 79e4de90928ef6d4fb3e28110c42589a, type: 3}
-  m_PrefabInstance: {fileID: 4696176572276612810}
+  m_PrefabInstance: {fileID: 5939853861606554926}
   m_PrefabAsset: {fileID: 0}

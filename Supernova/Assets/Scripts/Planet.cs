@@ -5,15 +5,15 @@ using UnityEngine;
 
 public enum PLANETS_TYPE
 {
-    sui = 1,
-    kin,
-    chi,
-    ka,
-    moku,
-    dou,
-    ten,
-    kai,
-    taiyou,
+    one = 1,
+    two,
+    three,
+    four,
+    five,
+    six,
+    seven,
+    eight,
+    nine,
 }
 
 public class Planet : MonoBehaviour

@@ -15,7 +15,11 @@ PrefabInstance:
     - target: {fileID: 1653064339189188515, guid: 79e4de90928ef6d4fb3e28110c42589a, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 1eebe61fa30929248bdcda4d7c3c51ec, type: 3}
+      objectReference: {fileID: 21300000, guid: ddc556a241acd514ba8409f6e064201c, type: 3}
+    - target: {fileID: 1653064339189188515, guid: 79e4de90928ef6d4fb3e28110c42589a, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 1653064339189188515, guid: 79e4de90928ef6d4fb3e28110c42589a, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
@@ -87,6 +91,14 @@ PrefabInstance:
     - target: {fileID: 2994666857139320164, guid: 79e4de90928ef6d4fb3e28110c42589a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5255400797338641602, guid: 79e4de90928ef6d4fb3e28110c42589a, type: 3}
+      propertyPath: m_Radius
+      value: 3.6989295
+      objectReference: {fileID: 0}
+    - target: {fileID: 5255400797338641602, guid: 79e4de90928ef6d4fb3e28110c42589a, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.011574428
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &8470505548738425739
+--- !u!1001 &7242207961319521106
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,39 +10,55 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1107664184395555445, guid: 79e4de90928ef6d4fb3e28110c42589a, type: 3}
       propertyPath: m_Name
-      value: 01_sui
+      value: 06_dou
       objectReference: {fileID: 0}
     - target: {fileID: 1653064339189188515, guid: 79e4de90928ef6d4fb3e28110c42589a, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 8ff5851d96e353540b1e6d34f6dafe7b, type: 3}
+      objectReference: {fileID: 21300000, guid: 765aab9d7d5f75f478521312f0b8a3dd, type: 3}
+    - target: {fileID: 1653064339189188515, guid: 79e4de90928ef6d4fb3e28110c42589a, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1653064339189188515, guid: 79e4de90928ef6d4fb3e28110c42589a, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1823207884311009962, guid: 79e4de90928ef6d4fb3e28110c42589a, type: 3}
       propertyPath: fruitsType
-      value: 1
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1823207884311009962, guid: 79e4de90928ef6d4fb3e28110c42589a, type: 3}
       propertyPath: nextPlanet
       value: 
-      objectReference: {fileID: 3157794599125449229, guid: 964a71a5af85ef846a9f0144b123813e, type: 3}
+      objectReference: {fileID: 2419510982393581207, guid: af2110f637bdf4347b62259d61756879, type: 3}
     - target: {fileID: 1823207884311009962, guid: 79e4de90928ef6d4fb3e28110c42589a, type: 3}
       propertyPath: planetType
-      value: 1
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1823207884311009962, guid: 79e4de90928ef6d4fb3e28110c42589a, type: 3}
-      propertyPath: planetPrefabs.Array.data[0]
+      propertyPath: planetPrefabs.Array.data[6]
       value: 
-      objectReference: {fileID: 8850260874830975486}
+      objectReference: {fileID: 7772732951743519015}
+    - target: {fileID: 2994666857139320164, guid: 79e4de90928ef6d4fb3e28110c42589a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.70000005
+      objectReference: {fileID: 0}
+    - target: {fileID: 2994666857139320164, guid: 79e4de90928ef6d4fb3e28110c42589a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.70000005
+      objectReference: {fileID: 0}
+    - target: {fileID: 2994666857139320164, guid: 79e4de90928ef6d4fb3e28110c42589a, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.70000005
+      objectReference: {fileID: 0}
     - target: {fileID: 2994666857139320164, guid: 79e4de90928ef6d4fb3e28110c42589a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.772397
+      value: 6.7554493
       objectReference: {fileID: 0}
     - target: {fileID: 2994666857139320164, guid: 79e4de90928ef6d4fb3e28110c42589a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.9636803
+      value: 4.818402
       objectReference: {fileID: 0}
     - target: {fileID: 2994666857139320164, guid: 79e4de90928ef6d4fb3e28110c42589a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -76,13 +92,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5255400797338641602, guid: 79e4de90928ef6d4fb3e28110c42589a, type: 3}
+      propertyPath: m_Radius
+      value: 3.5882838
+      objectReference: {fileID: 0}
+    - target: {fileID: 5255400797338641602, guid: 79e4de90928ef6d4fb3e28110c42589a, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.009252002
+      objectReference: {fileID: 0}
+    - target: {fileID: 5255400797338641602, guid: 79e4de90928ef6d4fb3e28110c42589a, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.01115322
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79e4de90928ef6d4fb3e28110c42589a, type: 3}
---- !u!1 &8850260874830975486 stripped
+--- !u!1 &7772732951743519015 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1107664184395555445, guid: 79e4de90928ef6d4fb3e28110c42589a, type: 3}
-  m_PrefabInstance: {fileID: 8470505548738425739}
+  m_PrefabInstance: {fileID: 7242207961319521106}
   m_PrefabAsset: {fileID: 0}

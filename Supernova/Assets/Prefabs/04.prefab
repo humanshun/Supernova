@@ -12,10 +12,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: 04_ka
       objectReference: {fileID: 0}
+    - target: {fileID: 1107664184395555445, guid: 79e4de90928ef6d4fb3e28110c42589a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1653064339189188515, guid: 79e4de90928ef6d4fb3e28110c42589a, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 765aab9d7d5f75f478521312f0b8a3dd, type: 3}
+      objectReference: {fileID: 21300000, guid: 8d93f8b646fad08429a3686590a61bf7, type: 3}
+    - target: {fileID: 1653064339189188515, guid: 79e4de90928ef6d4fb3e28110c42589a, type: 3}
+      propertyPath: m_SortingOrder
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 1653064339189188515, guid: 79e4de90928ef6d4fb3e28110c42589a, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
