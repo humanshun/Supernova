@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour
     // スポーン位置の設定
     public Transform spawnPoint; // スポーンする位置
 
+    private bool canSpawn = true; // スポーン可能かどうかのフラグ
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -35,11 +37,11 @@ public class PlayerController : MonoBehaviour
         moveDirection = new Vector2(moveX, 0).normalized;
 
         // スペースキーを押したらフルーツをスポーン
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && canSpawn)
         {
             planetNumber = nextPlanet.nextPlanetNumber;
             nextPlanet.NextPlanetInstance();
-            SpawnRandomPlanet();
+            StartCoroutine(SpawnPlanetWithDelay()); // コルーチンを開始
         }
     }
 
@@ -56,6 +58,14 @@ public class PlayerController : MonoBehaviour
 
         // 位置を更新
         rb.position = currentPosition;
+    }
+
+    IEnumerator SpawnPlanetWithDelay()
+    {
+        canSpawn = false; // スポーンを一時停止
+        SpawnRandomPlanet(); // 惑星をスポーン
+        yield return new WaitForSeconds(1f); // 1秒待機
+        canSpawn = true; // スポーンを再開
     }
 
     void SpawnRandomPlanet()

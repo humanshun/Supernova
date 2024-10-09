@@ -8,5 +8,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/InGame.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: 9aa1e7e2ad46b9b499314c01abd1a4d0
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: bc450b6ee4b536644bbb77012a576cc0, type: 2}
