@@ -20,7 +20,7 @@ public class NextPlanet : MonoBehaviour
         Rigidbody2D rb = nextPlanet.GetComponent<Rigidbody2D>();
         if (rb != null)
         {
-            rb.isKinematic = true;
+            rb.isKinematic = true; // 惑星が動かないようにする
         }
     }
 }

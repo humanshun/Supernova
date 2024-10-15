@@ -6,16 +6,18 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 5f;  // プレイヤーの移動速度
     [SerializeField] NextPlanet nextPlanet;
+    [SerializeField] private float nextPlanetSeconds = 0;
     private Rigidbody2D rb;       // Rigidbody2Dコンポーネントへの参照
     private Vector2 moveDirection; // 移動方向を保存するための変数
     private int planetNumber;
+    private GameObject currentPlanet; // 現在プレイヤーにくっついている惑星
 
     // 移動範囲の制限
     public float minX = -8.5f;
     public float maxX = 8.5f;
 
-    // FruitsのPrefabを参照
-    public GameObject[] planetPrefabs; // 複数のFruitを保持する配列
+    // PlanetのPrefabを参照
+    public GameObject[] planetPrefabs; // 複数のPlanetを保持する配列
 
     // スポーン位置の設定
     public Transform spawnPoint; // スポーンする位置
@@ -25,7 +27,9 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        SpawnRandomPlanet();
+        nextPlanet.NextPlanetInstance(); // ゲーム開始時に次の惑星を表示
+        planetNumber = nextPlanet.nextPlanetNumber; // 次の惑星番号を取得
+        SpawnRandomPlanet(); // 最初の惑星をスポーン
     }
 
     void Update()
@@ -36,12 +40,14 @@ public class PlayerController : MonoBehaviour
         // Y軸方向の動きを制限するため、Yは0に固定
         moveDirection = new Vector2(moveX, 0).normalized;
 
-        // スペースキーを押したらフルーツをスポーン
+        // スペースキーを押したら惑星をスポーンまたは落下させる
         if (Input.GetKeyDown(KeyCode.Space) && canSpawn)
         {
-            planetNumber = nextPlanet.nextPlanetNumber;
-            nextPlanet.NextPlanetInstance();
-            StartCoroutine(SpawnPlanetWithDelay()); // コルーチンを開始
+            if (currentPlanet != null)
+            {
+                DropCurrentPlanet();
+                StartCoroutine(SpawnPlanetWithDelay());
+            }
         }
     }
 
@@ -58,19 +64,58 @@ public class PlayerController : MonoBehaviour
 
         // 位置を更新
         rb.position = currentPosition;
+
+        // 惑星がプレイヤーにくっついている場合、惑星もプレイヤーの位置に追従
+        if (currentPlanet != null)
+        {
+            currentPlanet.transform.position = spawnPoint.position;
+        }
     }
 
     IEnumerator SpawnPlanetWithDelay()
     {
-        canSpawn = false; // スポーンを一時停止
+        yield return new WaitForSeconds(nextPlanetSeconds); // 指定時間待機
+        planetNumber = nextPlanet.nextPlanetNumber;
+        nextPlanet.NextPlanetInstance(); // 次の惑星を更新して表示
         SpawnRandomPlanet(); // 惑星をスポーン
-        yield return new WaitForSeconds(1f); // 1秒待機
-        canSpawn = true; // スポーンを再開
     }
 
     void SpawnRandomPlanet()
     {
-        // 惑星をスポーン
-        Instantiate(planetPrefabs[planetNumber], spawnPoint.position, Quaternion.identity);
+        // 惑星をスポーンしてプレイヤーにくっつける
+        currentPlanet = Instantiate(planetPrefabs[planetNumber], spawnPoint.position, Quaternion.identity);
+
+        // Kinematicモードにして物理挙動を一時的に無効化
+        Rigidbody2D planetRb = currentPlanet.GetComponent<Rigidbody2D>();
+        Collider2D planetCollider = currentPlanet.GetComponent<Collider2D>();
+        if (planetRb != null)
+        {
+            planetRb.bodyType = RigidbodyType2D.Kinematic;
+        }
+        if (planetCollider != null)
+        {
+            planetCollider.enabled = false;
+        }
+    }
+
+    void DropCurrentPlanet()
+    {
+        if (currentPlanet != null)
+        {
+            // KinematicモードからDynamicモードに戻して重力で落下させる
+            Rigidbody2D planetRb = currentPlanet.GetComponent<Rigidbody2D>();
+            Collider2D planetCollider = currentPlanet.GetComponent<Collider2D>();
+
+            if (planetRb != null)
+            {
+                planetRb.bodyType = RigidbodyType2D.Dynamic; // 重力を有効化して落下させる
+            }
+            if (planetCollider != null)
+            {
+                planetCollider.enabled = true;
+            }
+
+            currentPlanet = null; // currentPlanetをリセット
+        }
     }
 }
