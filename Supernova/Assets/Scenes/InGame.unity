@@ -1735,7 +1735,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   nextPlanet: {fileID: 15854030}
-  nextPlanetSeconds: 0
+  nextPlanetSeconds: 0.7
   minX: -8.5
   maxX: 8.5
   planetPrefabs:
