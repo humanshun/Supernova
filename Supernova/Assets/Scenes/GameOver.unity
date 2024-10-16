@@ -433,7 +433,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -97}
-  m_SizeDelta: {x: 616.7, y: 201.8}
+  m_SizeDelta: {x: 972.7, y: 201.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &240738572
 MonoBehaviour:
@@ -672,8 +672,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9850d0e7ba7e0c84f80ec72b512091d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bgmSource: {fileID: 307952164}
+  audioSource: {fileID: 307952164}
   bgmClip: {fileID: 8300000, guid: 45fb5a53d39b4bd4db964db94f7e3dc2, type: 3}
+  selectClip: {fileID: 8300000, guid: 1795e36c3ee8707458d32f52f45731de, type: 3}
+  pressClip: {fileID: 8300000, guid: 9e3eec3ae51a96a4c88088003181e4d9, type: 3}
+  planetClip: {fileID: 8300000, guid: 294c45fd902614548a8626b1a08e0026, type: 3}
 --- !u!4 &307952166
 Transform:
   m_ObjectHideFlags: 0
@@ -853,6 +856,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firstSelectedButton: {fileID: 1537065533}
+  otherButton:
+  - {fileID: 764131984}
 --- !u!4 &486446410
 Transform:
   m_ObjectHideFlags: 0
@@ -2246,8 +2251,8 @@ SceneRoots:
   - {fileID: 1591209567}
   - {fileID: 1682435824}
   - {fileID: 307952166}
-  - {fileID: 1275333770}
   - {fileID: 486446410}
+  - {fileID: 1275333770}
   - {fileID: 795752385}
   - {fileID: 2044518525}
   - {fileID: 122569471}

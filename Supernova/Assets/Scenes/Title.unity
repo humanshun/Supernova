@@ -705,12 +705,12 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 711195507}
   - {fileID: 1045896593}
   - {fileID: 1959692511}
   - {fileID: 1562911612}
   - {fileID: 1746830232}
   - {fileID: 1659288973}
-  - {fileID: 711195507}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -775,7 +775,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u30B9\u30FC\u30D1\u30FC\u30CE\u30F4\u30A1"
+  m_text: "\uFF33\uFF35\uFF30\uFF25\uFF32\uFF2E\uFF2F\uFF36\uFF21"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ec5b4a96fe8666744b6c7b5b4be5388f, type: 2}
   m_sharedMaterial: {fileID: 4403958647003847737, guid: ec5b4a96fe8666744b6c7b5b4be5388f, type: 2}
@@ -802,8 +802,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 235.91
-  m_fontSizeBase: 235.91
+  m_fontSize: 214.08
+  m_fontSizeBase: 214.08
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -812,7 +812,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: -16.8
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -2080,8 +2080,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9850d0e7ba7e0c84f80ec72b512091d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bgmSource: {fileID: 1830826781}
+  audioSource: {fileID: 1830826781}
   bgmClip: {fileID: 8300000, guid: 45fb5a53d39b4bd4db964db94f7e3dc2, type: 3}
+  selectClip: {fileID: 8300000, guid: 1795e36c3ee8707458d32f52f45731de, type: 3}
+  pressClip: {fileID: 8300000, guid: 9e3eec3ae51a96a4c88088003181e4d9, type: 3}
+  planetClip: {fileID: 8300000, guid: 294c45fd902614548a8626b1a08e0026, type: 3}
 --- !u!4 &1830826783
 Transform:
   m_ObjectHideFlags: 0
@@ -2261,6 +2264,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firstSelectedButton: {fileID: 1746830231}
+  otherButton:
+  - {fileID: 1659288972}
 --- !u!4 &1995125862
 Transform:
   m_ObjectHideFlags: 0
@@ -2403,6 +2408,12 @@ Transform:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 1007995919}
+  - {fileID: 736837461}
+  - {fileID: 1995125862}
+  - {fileID: 1830826783}
+  - {fileID: 1261431813}
+  - {fileID: 1297966989}
   - {fileID: 1812597712}
   - {fileID: 2044850847}
   - {fileID: 2123817373}
@@ -2412,9 +2423,3 @@ SceneRoots:
   - {fileID: 482627677}
   - {fileID: 548224714}
   - {fileID: 1548055167}
-  - {fileID: 1007995919}
-  - {fileID: 736837461}
-  - {fileID: 1261431813}
-  - {fileID: 1297966989}
-  - {fileID: 1830826783}
-  - {fileID: 1995125862}

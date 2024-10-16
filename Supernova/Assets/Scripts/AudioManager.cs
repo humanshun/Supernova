@@ -4,8 +4,12 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
 
-    public AudioSource bgmSource; // BGMを再生するAudioSourceをアタッチ
+    public AudioSource audioSource; // BGMを再生するAudioSourceをアタッチ
     public AudioClip bgmClip; // 再生したいBGMのAudioClipをアタッチ
+
+    public AudioClip selectClip;
+    public AudioClip pressClip;
+    public AudioClip planetClip;
 
     private void Awake()
     {
@@ -29,19 +33,41 @@ public class AudioManager : MonoBehaviour
 
     public void PlayBGM()
     {
-        if (bgmSource != null && bgmClip != null)
+        if (audioSource != null && bgmClip != null)
         {
-            bgmSource.clip = bgmClip;
-            bgmSource.loop = true; // ループ再生を有効にする
-            bgmSource.Play();
+            audioSource.clip = bgmClip;
+            audioSource.loop = true; // ループ再生を有効にする
+            audioSource.Play();
         }
     }
 
     public void StopBGM()
     {
-        if (bgmSource != null)
+        if (audioSource != null)
         {
-            bgmSource.Stop();
+            audioSource.Stop();
+        }
+    }
+
+    public void SelectSound()
+    {
+        if (audioSource != null)
+        {
+            audioSource.PlayOneShot(selectClip);
+        }
+    }
+    public void pressSound()
+    {
+        if (audioSource != null)
+        {
+            audioSource.PlayOneShot(pressClip);
+        }
+    }
+    public void planetSound()
+    {
+        if (audioSource != null)
+        {
+            audioSource.PlayOneShot(planetClip);
         }
     }
 }
