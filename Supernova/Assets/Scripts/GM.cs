@@ -88,7 +88,7 @@ public class GM : MonoBehaviour
         scores.Add((playerName, score));
 
         // スコアを降順でソートして、上位11件のみを保持
-        scores = scores.OrderByDescending(s => s.playerScore).Take(11).ToList();
+        scores = scores.OrderByDescending(s => s.playerScore).Take(10).ToList();
 
         // スコアデータを文字列形式に変換し、PlayerPrefsに保存
         string scoreData = string.Join(",", scores.Select(s => $"{s.playerName}:{s.playerScore}"));

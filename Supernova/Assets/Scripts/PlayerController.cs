@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 5f;  // プレイヤーの移動速度
     [SerializeField] NextPlanet nextPlanet;
-    [SerializeField] private float nextPlanetSeconds = 0;
+    [SerializeField] private float nextPlanetSeconds = 1;
     private Rigidbody2D rb;       // Rigidbody2Dコンポーネントへの参照
     private Vector2 moveDirection; // 移動方向を保存するための変数
     private int planetNumber;
