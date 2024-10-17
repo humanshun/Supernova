@@ -24,15 +24,15 @@ public class Planet : MonoBehaviour
     private int[] planetScores = new int[]
     {
         0, // インデックス0は使用しない
-        10, // one   のスコア
-        20, // two   のスコア
-        30, // three のスコア
-        40, // four  のスコア
-        50, // five  のスコア
-        60, // six   のスコア
-        70, // seven のスコア
-        80, // eight のスコア
-        90  // nine  のスコア
+        1, // one   のスコア
+        2, // two   のスコア
+        4, // three のスコア
+        8, // four  のスコア
+        16, // five  のスコア
+        32, // six   のスコア
+        64, // seven のスコア
+        128, // eight のスコア
+        256  // nine  のスコア
     };
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -42,6 +42,11 @@ public class Planet : MonoBehaviour
             // 同じenum同士が衝突した場合
             if (planet.planetType == planetType)
             {
+                // nine同士がぶつかった場合、デバッグログを出力
+                if (planetType != PLANETS_TYPE.nine)
+                {
+                    AudioManager.instance.planetSound();
+                }
                 Destroy(gameObject);
                 collision.gameObject.GetComponent<Planet>().nextPlanet = null;
 
@@ -56,14 +61,12 @@ public class Planet : MonoBehaviour
                 Vector3 averageVelocity = (velocity1 + velocity2) / 2;
 
                 // 次の惑星をインスタンス化する位置を中間地点に設定
-            if (nextPlanet)
-            {
-                GameObject newPlanet = Instantiate(nextPlanet, midPoint, transform.rotation);
-                // 新しくインスタンス化した惑星に速度を適用
-                newPlanet.GetComponent<Rigidbody2D>().velocity = averageVelocity;
-
-                AudioManager.instance.planetSound();
-            }
+                if (nextPlanet)
+                {
+                    GameObject newPlanet = Instantiate(nextPlanet, midPoint, transform.rotation);
+                    // 新しくインスタンス化した惑星に速度を適用
+                    newPlanet.GetComponent<Rigidbody2D>().velocity = averageVelocity;
+                }
 
                 // シングルトンのGameManagerを使ってスコアを加算
                 GM.Instance.AddScore(planetScores[(int)planetType]);

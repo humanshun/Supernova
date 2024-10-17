@@ -41,20 +41,44 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1823207884311009962, guid: 79e4de90928ef6d4fb3e28110c42589a, type: 3}
-      propertyPath: planetPrefabs.Array.data[2]
+      propertyPath: planetPrefabs.Array.data[1]
       value: 
       objectReference: {fileID: 3157794599125449229}
+    - target: {fileID: 1823207884311009962, guid: 79e4de90928ef6d4fb3e28110c42589a, type: 3}
+      propertyPath: planetPrefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 5331252274652126307, guid: fb2172005787cad409a2d011447de6e6, type: 3}
+    - target: {fileID: 1823207884311009962, guid: 79e4de90928ef6d4fb3e28110c42589a, type: 3}
+      propertyPath: planetPrefabs.Array.data[3]
+      value: 
+      objectReference: {fileID: 4752265993662505199, guid: fe6292f5e082dfd4e91d7ebde9d2c1f3, type: 3}
+    - target: {fileID: 1823207884311009962, guid: 79e4de90928ef6d4fb3e28110c42589a, type: 3}
+      propertyPath: planetPrefabs.Array.data[4]
+      value: 
+      objectReference: {fileID: 7580942010851116035, guid: 29220d1ebff354244a27aae9ce1cb90a, type: 3}
+    - target: {fileID: 1823207884311009962, guid: 79e4de90928ef6d4fb3e28110c42589a, type: 3}
+      propertyPath: planetPrefabs.Array.data[5]
+      value: 
+      objectReference: {fileID: 7772732951743519015, guid: a3cbaf242d1812a4bb101c50c64ee81b, type: 3}
+    - target: {fileID: 1823207884311009962, guid: 79e4de90928ef6d4fb3e28110c42589a, type: 3}
+      propertyPath: planetPrefabs.Array.data[6]
+      value: 
+      objectReference: {fileID: 2419510982393581207, guid: af2110f637bdf4347b62259d61756879, type: 3}
+    - target: {fileID: 1823207884311009962, guid: 79e4de90928ef6d4fb3e28110c42589a, type: 3}
+      propertyPath: planetPrefabs.Array.data[7]
+      value: 
+      objectReference: {fileID: 5652893856142654655, guid: 16be99098162f9448980157cd4cdcc2d, type: 3}
     - target: {fileID: 2994666857139320164, guid: 79e4de90928ef6d4fb3e28110c42589a, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.15
+      value: 0.13
       objectReference: {fileID: 0}
     - target: {fileID: 2994666857139320164, guid: 79e4de90928ef6d4fb3e28110c42589a, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.15
+      value: 0.13
       objectReference: {fileID: 0}
     - target: {fileID: 2994666857139320164, guid: 79e4de90928ef6d4fb3e28110c42589a, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.15
+      value: 0.13
       objectReference: {fileID: 0}
     - target: {fileID: 2994666857139320164, guid: 79e4de90928ef6d4fb3e28110c42589a, type: 3}
       propertyPath: m_LocalPosition.x

@@ -2221,6 +2221,7 @@ MonoBehaviour:
   selectClip: {fileID: 8300000, guid: 1795e36c3ee8707458d32f52f45731de, type: 3}
   pressClip: {fileID: 8300000, guid: 9e3eec3ae51a96a4c88088003181e4d9, type: 3}
   planetClip: {fileID: 8300000, guid: 294c45fd902614548a8626b1a08e0026, type: 3}
+  explosionClip: {fileID: 8300000, guid: 44eef354ead6491409f77d471dae526f, type: 3}
 --- !u!4 &1830826783
 Transform:
   m_ObjectHideFlags: 0

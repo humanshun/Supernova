@@ -36,12 +36,6 @@ public class GM : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    void Start()
-    {
-        // ゲーム開始時にマウスカーソルを非表示にする
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked; // マウスカーソルを画面中央に固定
-    }
 
     private void OnDestroy()
     {

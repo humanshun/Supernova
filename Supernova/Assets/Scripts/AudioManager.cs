@@ -10,6 +10,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip selectClip;
     public AudioClip pressClip;
     public AudioClip planetClip;
+    public AudioClip explosionClip;
 
     private void Awake()
     {
@@ -70,4 +71,13 @@ public class AudioManager : MonoBehaviour
             audioSource.PlayOneShot(planetClip);
         }
     }
+    public void explosionSound()
+{
+    if (audioSource != null)
+    {
+        float volume = 0.4f; // 音量を50%に設定（0.0f〜1.0fの範囲）
+        audioSource.PlayOneShot(explosionClip, volume);
+    }
+}
+
 }
