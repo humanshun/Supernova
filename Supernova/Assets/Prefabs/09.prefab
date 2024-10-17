@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 09
       objectReference: {fileID: 0}
+    - target: {fileID: 1107664184395555445, guid: 79e4de90928ef6d4fb3e28110c42589a, type: 3}
+      propertyPath: m_TagString
+      value: Planet
+      objectReference: {fileID: 0}
     - target: {fileID: 1653064339189188515, guid: 79e4de90928ef6d4fb3e28110c42589a, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -28,6 +32,10 @@ PrefabInstance:
       propertyPath: fruitsType
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 1823207884311009962, guid: 79e4de90928ef6d4fb3e28110c42589a, type: 3}
+      propertyPath: nextPlanet
+      value: 
+      objectReference: {fileID: 3007091371376560354, guid: eb39fd51f703951458981f78bfd71ac5, type: 3}
     - target: {fileID: 1823207884311009962, guid: 79e4de90928ef6d4fb3e28110c42589a, type: 3}
       propertyPath: planetType
       value: 9
