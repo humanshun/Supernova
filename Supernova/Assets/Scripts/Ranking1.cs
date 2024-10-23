@@ -4,7 +4,7 @@ using System.Linq;
 using TMPro;
 using UnityEngine;
 
-public class Ranking : MonoBehaviour
+public class Ranking1 : MonoBehaviour
 {
     public TextMeshProUGUI rankingNameText;
     public TextMeshProUGUI rankingScoreText;
