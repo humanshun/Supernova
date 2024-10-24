@@ -8,10 +8,14 @@ using TMPro;
 public class TitleManager : MonoBehaviour
 {
     public TMP_InputField nameInputField;
+    public static string playerName;
     public Button startButton;
 
     // 最大文字数を設定
     private const int maxCharacterLimit = 10;
+
+    // DataManagerへの参照
+    private DataManager dataManager;
 
     void Start()
     {
@@ -23,14 +27,15 @@ public class TitleManager : MonoBehaviour
 
     void OnStartButtonClicked()
     {
-        string playerName = nameInputField.text;
-
         // 名前の長さを確認
         if (!string.IsNullOrEmpty(playerName))
         {
             if (playerName.Length <= maxCharacterLimit)
             {
-                GM.Instance.PlayerName = playerName;
+                // GM.Instance.PlayerName = playerName;
+                // 名前を保存
+                playerName = nameInputField.text;
+                
                 SceneManager.LoadScene("InGame");
             }
             else

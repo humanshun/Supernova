@@ -10,7 +10,7 @@ public class DataManager : MonoBehaviour
     string filepath;
     string fileName = "Data.json";
 
-    //----------------------------------------------
+    //----------------------------------------------------------------
     //開始時にファイルをチェック、読み込み
     void Awake()
     {
@@ -30,7 +30,7 @@ public class DataManager : MonoBehaviour
         }
     }
 
-    //-----------------------------------------------
+    //----------------------------------------------------------------
     //jsonとしてデータを保存
     public void Save(SaveData data)
     {
@@ -40,7 +40,7 @@ public class DataManager : MonoBehaviour
         writer.Close();
     }
 
-    //-----------------------------------------------
+    //----------------------------------------------------------------
     //jsonファイル読み込み
     SaveData Load(string path)
     {
@@ -51,14 +51,14 @@ public class DataManager : MonoBehaviour
         return JsonUtility.FromJson<SaveData>(json);
     }
 
-    //-----------------------------------------------
+    //----------------------------------------------------------------
     //ゲーム終了時に保存
     void OnDestroy()
     {
         Save(data);
     }
 
-    //------------------------------------------------
+    //----------------------------------------------------------------
     //プレイヤーの名前を設定
     public void SetPlayerName(string name)
     {

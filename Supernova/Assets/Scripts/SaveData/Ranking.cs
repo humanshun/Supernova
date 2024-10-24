@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
 public class Ranking : MonoBehaviour
 {
@@ -8,7 +8,8 @@ public class Ranking : MonoBehaviour
     const int rankCnt = SaveData.rankCnt; //ランキング数
 
     /* コンポーネント取得用 */
-    Text[] rankTexts = new Text[rankCnt]; //ランキングのテキスト
+    TextMeshProUGUI[] rankNameTexts = new TextMeshProUGUI[rankCnt]; //ランキング名前のテキスト
+    TextMeshProUGUI[] rankScoreTexts = new TextMeshProUGUI[rankCnt]; //ランキングスコアのテキスト
     SaveData data; //参照するセーブデータ
 
     //-------------------------------------------------------------
@@ -18,13 +19,16 @@ public class Ranking : MonoBehaviour
 
         for (int i = 0; i < rankCnt; i++)
         {
-            Transform rankChilds = GameObject.Find("RankTexts").transform.GetChild(i); //子オブジェクト取得
-            rankTexts[i] = rankChilds.GetComponent<Text>();
+            Transform rankNameChilds = GameObject.Find("RankNameTexts").transform.GetChild(i); //子オブジェクト取得
+            rankNameTexts[i] = rankNameChilds.GetComponent<TextMeshProUGUI>();
+
+            Transform rankScoreChilds = GameObject.Find("RankScoreTexts").transform.GetChild(i); //子オブジェクト取得
+            rankScoreTexts[i] = rankScoreChilds.GetComponent<TextMeshProUGUI>();
         }
     }
 
     //-------------------------------------------------------------
-    void FixedUpdate() // Typo修正: FixdUpdata -> FixedUpdate
+    void FixedUpdate()
     {
         DispRank();
     }
@@ -36,7 +40,8 @@ public class Ranking : MonoBehaviour
         for (int i = 0; i < rankCnt; i++)
         {
             // 各ランクごとの名前とスコアを表示
-            rankTexts[i].text = (rankNames[i] + " : " + data.userNames[i] + " - " + data.rank[i]);
+            rankNameTexts[i].text = $"{rankNames[i]} : {data.userNames[i]}";
+            rankScoreTexts[i].text = $"{data.rank[i]}";
         }
     }
 
@@ -44,7 +49,7 @@ public class Ranking : MonoBehaviour
     //ランキング保存
     public void SetRank()
     {
-        InputField scoreInputField = GameObject.Find("ScoreInputField").GetComponent<InputField>();
+        TMP_InputField scoreInputField = GameObject.Find("Score").GetComponent<TMP_InputField>();
         int score = int.Parse(scoreInputField.text); // スコア入力フィールドの値を取得
 
         // 現在のプレイヤー名を取得

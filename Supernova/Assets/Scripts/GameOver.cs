@@ -1,10 +1,21 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameOver : MonoBehaviour
 {
+    private DataManager dataManager;
+    public int playerScore = 0; // プレイヤーのスコアを管理する変数
+
+    private void Start()
+    {
+        // DataManagerコンポーネントを取得
+        dataManager = FindObjectOfType<DataManager>();
+
+        // ここでプレイヤーのスコアを取得する処理を追加
+        // 例: playerScore = GM.Instance.CurrentScore;
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         SpriteRenderer spriteRenderer = other.GetComponent<SpriteRenderer>();
@@ -28,8 +39,6 @@ public class GameOver : MonoBehaviour
             rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         }
 
-
-
         // Collider2Dを無効にする
         Collider2D collider = other.GetComponent<Collider2D>();
 
@@ -37,6 +46,9 @@ public class GameOver : MonoBehaviour
         {
             collider.enabled = false;
         }
+
+        // スコアを保存
+        SavePlayerScore();
 
         // 2秒たってからシーン切り替え
         StartCoroutine(SceneChange());
@@ -55,13 +67,23 @@ public class GameOver : MonoBehaviour
         spriteRenderer.enabled = true;
     }
 
+    private void SavePlayerScore()
+    {
+        if (dataManager != null)
+        {
+            // プレイヤー名とスコアを取得して保存
+            string playerName = dataManager.data.userNames[0]; // デフォルトのプレイヤー名を取得
+            dataManager.SetPlayerName(playerName); // 必要ならばプレイヤー名を更新
+
+            // スコアをランキングに追加
+            dataManager.data.rank[0] = playerScore; // 例として0番目にスコアを保存
+            dataManager.Save(dataManager.data); // JSONに保存
+        }
+    }
+
     private IEnumerator SceneChange()
     {
         yield return new WaitForSeconds(2);
-
-        // プレイヤー名を取得し、スコアを保存
-        string playerName = GM.Instance.PlayerName; // シングルトンからプレイヤー名を取得
-        GM.Instance.SaveScore(playerName);
 
         // アウトゲームシーンに遷移
         SceneManager.LoadScene("GameOver");
