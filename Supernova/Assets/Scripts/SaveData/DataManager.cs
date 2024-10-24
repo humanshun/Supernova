@@ -17,23 +17,29 @@ public class DataManager : MonoBehaviour
         //パス名を取得
         filepath = Application.dataPath + "/" + fileName;
 
-        //ファイルがない時、ファイルを作成
+        // ファイルがない時、新しい SaveData オブジェクトを初期化して保存
         if (!File.Exists(filepath))
         {
+            data = new SaveData();
             Save(data);
         }
-
-        //ファイルを読み込んでdataに格納
-        data = Load(filepath);
+        else
+        {
+            // ファイルを読み込んで data に格納
+            data = Load(filepath);
+        }
     }
 
     //-----------------------------------------------
     //jsonとしてデータを保存
-    void Save(SaveData data)
+    public void Save(SaveData data)
     {
         string json = JsonUtility.ToJson(data);
-
+        StreamWriter writer = new StreamWriter(filepath);
+        writer.Write(json);
+        writer.Close();
     }
+
     //-----------------------------------------------
     //jsonファイル読み込み
     SaveData Load(string path)
@@ -44,10 +50,23 @@ public class DataManager : MonoBehaviour
 
         return JsonUtility.FromJson<SaveData>(json);
     }
+
     //-----------------------------------------------
     //ゲーム終了時に保存
     void OnDestroy()
     {
+        Save(data);
+    }
+
+    //------------------------------------------------
+    //プレイヤーの名前を設定
+    public void SetPlayerName(string name)
+    {
+        // 現在のプレイヤー名を設定
+        if (data.userNames.Length > 0)
+        {
+            data.userNames[0] = name;
+        }
         Save(data);
     }
 }

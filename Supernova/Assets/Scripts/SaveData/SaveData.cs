@@ -2,6 +2,6 @@
 public class SaveData
 {
     public const int rankCnt = 10;
-    public const string userName = "unknown";
+    public string[] userNames = new string[rankCnt]; // 修正: userName -> userNames
     public int[] rank = new int[rankCnt];
 }
