@@ -30,7 +30,7 @@ public class TitleManager : MonoBehaviour
         {
             if (playerName.Length <= maxCharacterLimit)
             {
-                GM.Instance.PlayerName = playerName;
+                GM.PlayerName = playerName;
                 SceneManager.LoadScene("InGame");
             }
             else

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public enum PLANETS_TYPE
 {
@@ -20,6 +21,7 @@ public class Planet : MonoBehaviour
     public GameObject nextPlanet;
     public GameObject[] planetPrefabs;
     public PLANETS_TYPE planetType;
+    private GM gameManager;
 
     private int[] planetScores = new int[]
     {
@@ -69,7 +71,10 @@ public class Planet : MonoBehaviour
                 }
 
                 // シングルトンのGameManagerを使ってスコアを加算
-                GM.Instance.AddScore(planetScores[(int)planetType]);
+                // GM.Instance.AddScore(planetScores[(int)planetType]);
+
+                gameManager = FindObjectOfType<GM>();
+                GM.score += planetScores[(int)planetType];
             }
         }
     }

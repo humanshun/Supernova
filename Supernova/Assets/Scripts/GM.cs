@@ -4,17 +4,16 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 using System.Linq;
-using Unity.Mathematics;
 
 public class GM : MonoBehaviour
 {
-    // シングルトンインスタンスを保持
+    // シングルトンインスタンス
     public static GM Instance { get; private set; }
-    
+
     // 現在のプレイヤーのスコアを保持
-    public int score = 0;
-    public string PlayerName { get; set; } // プレイヤー名を保持するプロパティ
-    
+    public static int score = 0;
+    public static string PlayerName;
+
     // スコアを表示するためのUI (TextMeshPro)
     [SerializeField] private TextMeshProUGUI scoreText;
 
@@ -23,18 +22,23 @@ public class GM : MonoBehaviour
 
     private void Awake()
     {
-        // 他のインスタンスが存在する場合はこのオブジェクトを破棄
+        // シングルトンの実装
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject); // シーンが切り替わっても破棄しない
-            SceneManager.sceneLoaded += OnSceneLoaded; // シーンがロードされたときのイベントを登録
-            LoadScores();// 保存されているスコアを読み込む
+            DontDestroyOnLoad(gameObject); // シーン遷移でオブジェクトが破壊されないようにする
         }
         else
         {
-            Destroy(gameObject);
+            Destroy(gameObject); // 既にインスタンスが存在する場合、重複を避けるために破壊
         }
+    }
+
+    private void Start()
+    {
+        // シーンがロードされたときのイベントを登録
+        SceneManager.sceneLoaded += OnSceneLoaded; 
+        LoadScores(); // 保存されているスコアを読み込む
     }
 
     private void OnDestroy()
@@ -75,36 +79,35 @@ public class GM : MonoBehaviour
             scoreText.text = score.ToString(); // スコアを文字列に変換して表示
         }
     }
-    //プレイヤーのスコアを保存するメソッド
+
+    // プレイヤーのスコアを保存するメソッド
     public void SaveScore(string playerName)
     {
         // 現在のプレイヤー名とスコアをランキングリストに追加
         scores.Add((playerName, score));
 
-        // スコアを降順でソートして、上位11件のみを保持
+        // スコアを降順でソートして、上位10件のみを保持
         scores = scores.OrderByDescending(s => s.playerScore).Take(10).ToList();
 
         // スコアデータを文字列形式に変換し、PlayerPrefsに保存
         string scoreData = string.Join(",", scores.Select(s => $"{s.playerName}:{s.playerScore}"));
         PlayerPrefs.SetString("Scores", scoreData);
         PlayerPrefs.Save();
-
-        // Debug.Log("スコアが保存されました: " + scoreData);
     }
 
-    //保存されたスコアを読み込むメソッド
+    // 保存されたスコアを読み込むメソッド
     private void LoadScores()
     {
-        //PlayerPrefsから保存されているスコアデータを取得
+        // PlayerPrefsから保存されているスコアデータを取得
         string savedScores = PlayerPrefs.GetString("Scores", "");
         if (!string.IsNullOrEmpty(savedScores))
         {
-            //文字列を分割して、スコアリストに変換
+            // 文字列を分割して、スコアリストに変換
             scores = savedScores.Split(',')
-            .Select(s => s.Split(':')) //"プレイヤー名:スコア"形式を分割
-            .Where(parts => parts.Length == 2 && int.TryParse(parts[1], out _)) //スコア部分が整数に変換できるかチェック
-            .Select(parts => (parts[0], int.Parse(parts[1]))) //プレイヤー名とスコアをタプルに変換
-            .ToList(); //リストに変換
+            .Select(s => s.Split(':')) // "プレイヤー名:スコア"形式を分割
+            .Where(parts => parts.Length == 2 && int.TryParse(parts[1], out _)) // スコア部分が整数に変換できるかチェック
+            .Select(parts => (parts[0], int.Parse(parts[1]))) // プレイヤー名とスコアをタプルに変換
+            .ToList(); // リストに変換
         }
     }
 

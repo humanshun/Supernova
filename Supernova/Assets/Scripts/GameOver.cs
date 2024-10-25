@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameOver : MonoBehaviour
 {
+    private RankingManager rankingManager;
     private void OnTriggerEnter2D(Collider2D other)
     {
         SpriteRenderer spriteRenderer = other.GetComponent<SpriteRenderer>();
@@ -59,11 +60,16 @@ public class GameOver : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
 
-        // プレイヤー名を取得し、スコアを保存
-        string playerName = GM.Instance.PlayerName; // シングルトンからプレイヤー名を取得
-        GM.Instance.SaveScore(playerName);
+        // プレイヤー名とスコアを取得し、ランキングに追加
+        string playerName = GM.PlayerName; // 静的プロパティにアクセス
+        rankingManager.rankingData.AddPlayer(playerName, GM.score); // GM.score にも静的にアクセス
+
+        // JSONデータをファイルに保存
+        string json = JsonUtility.ToJson(rankingManager.rankingData);
+        rankingManager.SaveJsonToFile(json);
 
         // アウトゲームシーンに遷移
         SceneManager.LoadScene("GameOver");
     }
+
 }

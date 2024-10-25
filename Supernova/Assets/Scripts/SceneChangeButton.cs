@@ -10,7 +10,6 @@ public class SceneChangeButton : MonoBehaviour
     [SerializeField] string sceneName;
 
     [SerializeField] Button restartButton;
-
     void Start()
     {
         restartButton.onClick.AddListener(ChangeScene);
@@ -18,7 +17,7 @@ public class SceneChangeButton : MonoBehaviour
     // ボタンが押されたときに呼ばれるメソッド
     public void ChangeScene()
     {
-        GM.Instance.score = 0;
+        GM.score = 0;
         //指定されたシーンに切り替え
         SceneManager.LoadScene(sceneName);
     }
