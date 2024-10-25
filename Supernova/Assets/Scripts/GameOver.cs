@@ -6,6 +6,14 @@ using UnityEngine.SceneManagement;
 public class GameOver : MonoBehaviour
 {
     private RankingManager rankingManager;
+    private void Start()
+{
+    rankingManager = FindObjectOfType<RankingManager>();
+    if (rankingManager == null)
+    {
+        Debug.LogError("RankingManagerが見つかりませんでした。");
+    }
+}
     private void OnTriggerEnter2D(Collider2D other)
     {
         SpriteRenderer spriteRenderer = other.GetComponent<SpriteRenderer>();
@@ -44,17 +52,27 @@ public class GameOver : MonoBehaviour
     }
 
     private IEnumerator Blink(SpriteRenderer spriteRenderer, int blinkCount, float blinkInterval)
+{
+    for (int i = 0; i < blinkCount; i++)
     {
-        for (int i = 0; i < blinkCount; i++)
+        // spriteRenderer が null かどうかをチェック
+        if (spriteRenderer == null)
         {
-            // 表示を切り替える
-            spriteRenderer.enabled = !spriteRenderer.enabled;
-            // 指定した時間待機
-            yield return new WaitForSeconds(blinkInterval);
+            yield break; // spriteRenderer が null なら処理を終了
         }
-        // 最後に表示を有効にしておく
+
+        // 表示を切り替える
+        spriteRenderer.enabled = !spriteRenderer.enabled;
+
+        // 指定した時間待機
+        yield return new WaitForSeconds(blinkInterval);
+    }
+    // 最後に表示を有効にしておく
+    if (spriteRenderer != null)
+    {
         spriteRenderer.enabled = true;
     }
+}
 
     private IEnumerator SceneChange()
     {
