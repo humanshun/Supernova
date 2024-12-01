@@ -85,6 +85,9 @@ public class PlayerController : MonoBehaviour
         // 惑星をスポーンしてプレイヤーにくっつける
         currentPlanet = Instantiate(planetPrefabs[planetNumber], spawnPoint.position, Quaternion.identity);
 
+        // タグをUntaggedに設定
+        currentPlanet.tag = "Untagged";
+
         // Kinematicモードにして物理挙動を一時的に無効化
         Rigidbody2D planetRb = currentPlanet.GetComponent<Rigidbody2D>();
         Collider2D planetCollider = currentPlanet.GetComponent<Collider2D>();
@@ -105,6 +108,9 @@ public class PlayerController : MonoBehaviour
             // KinematicモードからDynamicモードに戻して重力で落下させる
             Rigidbody2D planetRb = currentPlanet.GetComponent<Rigidbody2D>();
             Collider2D planetCollider = currentPlanet.GetComponent<Collider2D>();
+
+            // タグをPlanetに設定
+            currentPlanet.tag = "Planet";
 
             if (planetRb != null)
             {
