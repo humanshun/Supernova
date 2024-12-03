@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using System.Linq;  // Linqの拡張メソッドを使用するために追加
+using System.Linq;
 
 public class RankingManager : MonoBehaviour
 {
@@ -27,6 +27,9 @@ public class RankingManager : MonoBehaviour
 
         // TextMeshProにランキングデータを表示
         DisplayRanking();
+
+        // 10位以下を削除し、JSONを更新
+        UpdateAndSaveRanking();
     }
 
     public void DisplayRanking()
@@ -83,5 +86,20 @@ public class RankingManager : MonoBehaviour
         rankingData.AddPlayer("Ivy", 110);
         rankingData.AddPlayer("Jack", 170);
         rankingData.AddPlayer("Kenny", 140);
+    }
+    public void UpdateAndSaveRanking()
+    {
+        // スコアで降順にソートし、10位以下を削除
+        playerList = playerList
+            .OrderByDescending(player => player.score)  // スコア順にソート
+            .Take(10)  // 上位10件だけを取得
+            .ToList();
+
+        // rankingData.playersも更新
+        rankingData.players = playerList;
+
+        // JSONに変換して保存
+        string json = JsonUtility.ToJson(rankingData, true);
+        SaveJsonToFile(json);
     }
 }

@@ -1,1 +1,44 @@
-{"players":[{"playerName":"Alice","score":100},{"playerName":"Bob","score":150},{"playerName":"Charlie","score":200},{"playerName":"Dave","score":90},{"playerName":"Eve","score":120},{"playerName":"Frank","score":180},{"playerName":"Grace","score":160},{"playerName":"Hank","score":130},{"playerName":"Ivy","score":110},{"playerName":"Jack","score":170},{"playerName":"Kenny","score":140},{"playerName":"aaa","score":236},{"playerName":"aaa","score":20},{"playerName":"aaa","score":150},{"playerName":"制作者","score":290},{"playerName":"制作者","score":42},{"playerName":"制作者","score":794},{"playerName":"さつき","score":3184},{"playerName":"まり姉","score":2926},{"playerName":"駿佑","score":7934},{"playerName":"せいや","score":3116},{"playerName":"制作者","score":2376},{"playerName":"Slack太郎","score":2798},{"playerName":"","score":1052},{"playerName":"","score":1537},{"playerName":"しゅんすけ","score":2336},{"playerName":"","score":128},{"playerName":"しゅんすけ","score":2734},{"playerName":"sameshima","score":2436},{"playerName":"shun","score":25171}]}
+{
+    "players": [
+        {
+            "playerName": "shun",
+            "score": 25171
+        },
+        {
+            "playerName": "駿佑",
+            "score": 7934
+        },
+        {
+            "playerName": "aka",
+            "score": 3188
+        },
+        {
+            "playerName": "さつき",
+            "score": 3184
+        },
+        {
+            "playerName": "せいや",
+            "score": 3116
+        },
+        {
+            "playerName": "まり姉",
+            "score": 2926
+        },
+        {
+            "playerName": "Slack太郎",
+            "score": 2798
+        },
+        {
+            "playerName": "しゅんすけ",
+            "score": 2734
+        },
+        {
+            "playerName": "sameshima",
+            "score": 2436
+        },
+        {
+            "playerName": "制作者",
+            "score": 2376
+        }
+    ]
+}
