@@ -44,7 +44,7 @@ public class Planet : MonoBehaviour
             // 同じenum同士が衝突した場合
             if (planet.planetType == planetType)
             {
-                // nine同士がぶつかった場合、デバッグログを出力
+                // nine以外がぶつかった場合
                 if (planetType != PLANETS_TYPE.nine)
                 {
                     AudioManager.instance.planetSound();
