@@ -12,15 +12,9 @@ public class RankingManager : MonoBehaviour
 
     void Start()
     {
+        // ClearRanking();
         // JSONからランキングデータをロード
         LoadJsonFromFile();
-
-        // もしロードしたデータが空であればサンプルデータを追加
-        if (rankingData.players.Count == 0)
-        {
-            // サンプルデータの追加
-            AddSampleData();
-        }
 
         // playerListにrankingDataのプレイヤーデータをコピー
         playerList = rankingData.players;
@@ -71,22 +65,6 @@ public class RankingManager : MonoBehaviour
             Debug.LogWarning("Ranking data file not found.");
         }
     }
-
-    // サンプルデータを追加するメソッド
-    void AddSampleData()
-    {
-        rankingData.AddPlayer("Alice", 100);
-        rankingData.AddPlayer("Bob", 150);
-        rankingData.AddPlayer("Charlie", 200);
-        rankingData.AddPlayer("Dave", 90);
-        rankingData.AddPlayer("Eve", 120);
-        rankingData.AddPlayer("Frank", 180);
-        rankingData.AddPlayer("Grace", 160);
-        rankingData.AddPlayer("Hank", 130);
-        rankingData.AddPlayer("Ivy", 110);
-        rankingData.AddPlayer("Jack", 170);
-        rankingData.AddPlayer("Kenny", 140);
-    }
     public void UpdateAndSaveRanking()
     {
         // スコアで降順にソートし、10位以下を削除
@@ -101,5 +79,18 @@ public class RankingManager : MonoBehaviour
         // JSONに変換して保存
         string json = JsonUtility.ToJson(rankingData, true);
         SaveJsonToFile(json);
+    }
+    public void ClearRanking()
+    {
+        // ランキングデータをクリア
+        rankingData.players.Clear();
+        playerList.Clear();
+
+        // JSONに変換して保存
+        string json = JsonUtility.ToJson(rankingData, true);
+        SaveJsonToFile(json);
+
+        // TextMeshProの表示もクリア
+        rankingText.text = "";
     }
 }
